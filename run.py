@@ -29,8 +29,9 @@ def calc_age(dob):
     Age = (datetime.datetime.now() - dob)
     convertdays = int(Age.days)
     ExactAgeYears = convertdays/365
+    global AgeYears
     AgeYears = int(ExactAgeYears)
-    print(str(name) + " You are " + str(AgeYears) + " years old")
+
 
 def calc_star_sign(day, month):
     if month == 12:
@@ -57,7 +58,7 @@ def calc_star_sign(day, month):
 	    astro_sign = 'Libra' if (day < 23) else 'scorpio'
     elif month == 11:
 	    astro_sign = 'scorpio' if (day < 22) else 'sagittarius'
-    print("Your Astrological sign is : " + str(astro_sign))
+    print(str(name) + ", you are " + str(AgeYears) + " years old " + "and " + "Your Astrological sign is : " + str(astro_sign))
 
 
 calc_age(dob)
