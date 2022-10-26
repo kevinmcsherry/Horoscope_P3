@@ -22,9 +22,10 @@ tprint("Horoscope  page!", font="small")
 #tprint("Page!\n", font="small")
 
 name = input("Please Enter your Name:")
-year = int(input(" Please enter the year you were born: "))
-month = int(input(" Please enter the number of the month you were born. For example 3 = March: "))
-day = int(input(" Please enter the day you were born "))
+year = int(input("Please enter the year you were born: "))
+month = int(input("Please enter the number of the month\n"
+                 + "you were born. For example 3 = March: "))
+day = int(input("Please enter the day you were born "))
 dob = datetime.datetime(year,month,day)
 
 
