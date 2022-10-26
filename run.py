@@ -15,10 +15,10 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('Horoscope_P3')
 
 
-tprint("Welcome to", font="small")
+tprint("Welcome  to", font="small")
 #tprint("to your", font="small")
-tprint("your Daily", font="small")
-tprint("Horoscope page!", font="small")
+tprint("your  Daily", font="small")
+tprint("Horoscope  page!", font="small")
 #tprint("Page!\n", font="small")
 
 name = input("Please Enter your Name:")
