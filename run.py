@@ -15,8 +15,8 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('Horoscope_P3')
 
 
-tprint("Welcome" + "  " + "to" + "  " + "your" + "  " + "Daily\n")
-tprint("HOROSCOPE" + "   " + "Page")
+print("Welcome" + " " + "to" + " " + "your" + " " + "Daily")
+print("Horoscope" + " " + "Page!\n")
 
 name = input("Please Enter your Name:")
 year = int(input(" Please enter the year you were born: "))
