@@ -22,9 +22,12 @@ tprint("Horoscope  page!", font="small")
 #tprint("Page!\n", font="small")
 
 name = input("Please Enter your Name:")
+print("")
 year = int(input("Please enter the year you were born: "))
+print("")
 month = int(input("Please enter the number of the month\n"
                  + "you were born. For example 3 = March: "))
+print("")
 day = int(input("Please enter the day you were born "))
 dob = datetime.datetime(year,month,day)
 
@@ -62,6 +65,7 @@ def calc_star_sign(day, month):
 	    astro_sign = 'Libra' if (day < 23) else 'scorpio'
     elif month == 11:
 	    astro_sign = 'scorpio' if (day < 22) else 'sagittarius'
+    print("")
     print(str(name) + ", you are " + str(AgeYears) + " years old " + "and " + "Your Astrological sign is : " + str(astro_sign))
 
 
