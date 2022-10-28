@@ -185,10 +185,11 @@ def get_another_reading():
     Function to determine if the user would 
     like to restart the program and enter new details
     """
-    want_reading = str(input("Type M for more readings or S to start again M/S: ")).lower().strip()
+    want_reading = str(input("Type M for more readings or E to Exit M/E: ")).lower().strip()
     try:
-        if want_reading[0] == 's':
-            os.execv(sys.executable, ['python3'] + sys.argv)
+        if want_reading[0] == 'e':
+            print("OK, Goodbye")
+            exit()
         elif want_reading[0] == 'm':
             want_tomorrow_reading = str(input("Would you like to know Tomorrows reading?  (Y/N:) ")).lower().strip()
             if want_tomorrow_reading[0] == 'y':
@@ -332,6 +333,15 @@ def tomorrow_reading():
         exit()
 
 
+def start_again():
+    start_program_again = str(input("Would you like to start again? Y/N ")).lower().strip()
+    if start_program_again[0] == 'n':
+            print("OK, Goodbye")
+            exit()
+    elif start_program_again[0] == 'y':
+        os.execv(sys.executable, ['python3'] + sys.argv)
+
+
 def main():
     """
     Run all program functions
@@ -340,6 +350,7 @@ def main():
     calc_star_sign()
     get_reading()
     get_another_reading()
+    start_again()
    
-  
+   
 main()
