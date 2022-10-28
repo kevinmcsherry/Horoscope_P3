@@ -25,12 +25,16 @@ sagittarius = SHEET.worksheet('Sagittarius')
 capricorn = SHEET.worksheet('Capricorn')
 aquarius = SHEET.worksheet('Aquarius')
 pisces = SHEET.worksheet('Pisces')
-global astro_sign
-global want_reading
+
 
 tprint("Welcome  to", font="small")
 tprint("your  Daily", font="small")
 tprint("Horoscope  page!", font="small")
+
+name = ""
+year = ""
+month = ""
+day = ""
 
 
 name = input("Please Enter your Name:")
@@ -49,47 +53,12 @@ def calc_age():
     Function to determine and calculate the exact age from
     the user based on date of birth entered
     """
+
     age = (datetime.datetime.now() - dob)
     convertdays = int(age.days)
     exact_age_years = convertdays/365
     global age_years
     age_years = int(exact_age_years)
-
-
-def calc_star_sign():
-    """
-    Function to determine the star sign of the user based
-    on the date of birth entered
-    """
-
-    if month == 12:
-        astro_sign = 'Sagittarius' if (day < 22) else 'capricorn'
-    elif month == 1:
-        astro_sign = 'Capricorn' if (day < 20) else 'aquarius'
-    elif month == 2:
-        astro_sign = 'Aquarius' if (day < 19) else 'pisces'
-    elif month == 3:
-        astro_sign = 'Pisces' if (day < 21) else 'aries'
-    elif month == 4:
-        astro_sign = 'Aries' if (day < 20) else 'taurus'
-    elif month == 5:
-        astro_sign = 'Taurus' if (day < 21) else 'gemini'
-    elif month == 6:
-        astro_sign = 'Gemini' if (day < 21) else 'cancer'
-    elif month == 7:
-        astro_sign = 'Cancer' if (day < 23) else 'leo'
-    elif month == 8:
-        astro_sign = 'Leo' if (day < 23) else 'virgo'
-    elif month == 9:
-        astro_sign = 'Virgo' if (day < 23) else 'libra'
-    elif month == 10:
-        astro_sign = 'Libra' if (day < 23) else 'scorpio'
-    elif month == 11:
-        astro_sign = 'Scorpio' if (day < 22) else 'sagittarius'
-    print("")
-    print(str(name) + ", you are " + str(age_years) + " years old \n"
-          + "and " + "Your Astrological sign is : " + str(astro_sign))
-    return astro_sign
 
 
 def get_reading():
@@ -114,53 +83,97 @@ def get_reading():
         return get_reading()
 
 
+def calc_star_sign():
+    """
+    Function to determine the star sign of the user based
+    on the date of birth entered
+    """
+
+    if month == 12:
+        astro_sign = 'Sagittarius' if (day < 22) else 'Capricorn'
+    elif month == 1:
+        astro_sign = 'Capricorn' if (day < 20) else 'Aquarius'
+    elif month == 2:
+        astro_sign = 'Aquarius' if (day < 19) else 'Pisces'
+    elif month == 3:
+        astro_sign = 'Pisces' if (day < 21) else 'Aries'
+    elif month == 4:
+        astro_sign = 'Aries' if (day < 20) else 'Taurus'
+    elif month == 5:
+        astro_sign = 'Taurus' if (day < 21) else 'Gemini'
+    elif month == 6:
+        astro_sign = 'Gemini' if (day < 21) else 'Cancer'
+    elif month == 7:
+        astro_sign = 'Cancer' if (day < 23) else 'Leo'
+    elif month == 8:
+        astro_sign = 'Leo' if (day < 23) else 'Virgo'
+    elif month == 9:
+        astro_sign = 'Virgo' if (day < 23) else 'Libra'
+    elif month == 10:
+        astro_sign = 'Libra' if (day < 23) else 'Scorpio'
+    elif month == 11:
+        astro_sign = 'Scorpio' if (day < 22) else 'Sagittarius'
+    print("")
+    return astro_sign        
+
+
 def retrieve_today_reading():
     """
     Function to retrieve and display 
     the correct horoscope reading
     """
+    user_astro_sign = calc_star_sign()
 
-    new_astro_sign = calc_star_sign()
+    print(name + ", " + "you are " + str(age_years) + " years old" 
+          + " and your star sign is " + user_astro_sign)
+    print("")
 
-    if new_astro_sign == 'Aries':
+    if user_astro_sign == 'Aries':
         get_reading = aries.acell('B2').value
-        print(get_reading)
-    elif new_astro_sign == 'Taurus':
+        print("Your Horoscope reading for Today is - " + get_reading)
+    elif user_astro_sign == 'Taurus':
         get_reading = taurus.acell('B2').value
-        print(get_reading)
-    elif new_astro_sign == 'Gemini':
+        print("Your Horoscope reading for Today is - " + get_reading)
+    elif user_astro_sign == 'Gemini':
         get_reading = gemini.acell('B2').value
-        print(get_reading)
-    elif new_astro_sign == 'Cancer':
+        print("Your Horoscope reading for Today is - " + get_reading)
+    elif user_astro_sign == 'Cancer':
         get_reading = cancer.acell('B2').value
-        print(get_reading)
-    elif new_astro_sign == 'Leo':
+        print("Your Horoscope reading for Today is - " + get_reading)
+    elif user_astro_sign == 'Leo':
         get_reading = leo.acell('B2').value
-        print(get_reading)
-    elif new_astro_sign == 'Virgo':
+        print("Your Horoscope reading for Today is - " + get_reading)
+    elif user_astro_sign == 'Virgo':
         get_reading = virgo.acell('B2').value
-        print(get_reading)
-    elif new_astro_sign == 'Libra':
+        print("Your Horoscope reading for Today is - " + get_reading)
+    elif user_astro_sign == 'Libra':
         get_reading = libra.acell('B2').value
-        print(get_reading)
-    elif new_astro_sign == 'Scorpious':
+        print("Your Horoscope reading for Today is - " + get_reading)
+    elif user_astro_sign == 'Scorpious':
         get_reading = scorpious.acell('B2').value
-        print(get_reading)
-    elif new_astro_sign == 'Sagittarius':
+        print("Your Horoscope reading for Today is - " + get_reading)
+    elif user_astro_sign == 'Sagittarius':
         get_reading = sagittarius.acell('B2').value
-        print(get_reading)
-    elif new_astro_sign == 'Capricorn':
+        print("Your Horoscope reading for Today is - " + get_reading)
+    elif user_astro_sign == 'Capricorn':
         get_reading = capricorn.acell('B2').value
-        print(get_reading)
-    elif new_astro_sign == 'Aquarius':
+        print("Your Horoscope reading for Today is - " + get_reading)
+    elif user_astro_sign == 'Aquarius':
         get_reading = aquarius.acell('B2').value
-        print(get_reading)
-    elif new_astro_sign == 'Pisces':
+        print("Your Horoscope reading for Today is - " + get_reading)
+    elif user_astro_sign == 'Pisces':
         get_reading = pisces.acell('B2').value
-        print(get_reading)
+        print("Your Horoscope reading for Today is - " + get_reading)
 
 
-calc_age()
-calc_star_sign()
-get_reading()
+def main():
+    """
+    Run all program functions
+    """
+    calc_age()
+    calc_star_sign()
+    get_reading()
+
+
+main()
 
