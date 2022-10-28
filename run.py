@@ -85,10 +85,11 @@ def calc_star_sign():
     elif month == 10:
         astro_sign = 'Libra' if (day < 23) else 'scorpio'
     elif month == 11:
-        astro_sign = 'scorpio' if (day < 22) else 'sagittarius'
+        astro_sign = 'Scorpio' if (day < 22) else 'sagittarius'
     print("")
     print(str(name) + ", you are " + str(age_years) + " years old \n"
           + "and " + "Your Astrological sign is : " + str(astro_sign))
+    return astro_sign
 
 
 def get_reading():
@@ -118,41 +119,43 @@ def retrieve_today_reading():
     Function to retrieve and display 
     the correct horoscope reading
     """
-    astro_sign = 'aries'
-    if astro_sign == 'aries':
+
+    new_astro_sign = calc_star_sign()
+
+    if new_astro_sign == 'Aries':
         get_reading = aries.acell('B2').value
         print(get_reading)
-    elif astro_sign == 'taurus':
+    elif new_astro_sign == 'Taurus':
         get_reading = taurus.acell('B2').value
         print(get_reading)
-    elif astro_sign == 'gemini':
+    elif new_astro_sign == 'Gemini':
         get_reading = gemini.acell('B2').value
         print(get_reading)
-    elif astro_sign == 'cancer':
+    elif new_astro_sign == 'Cancer':
         get_reading = cancer.acell('B2').value
         print(get_reading)
-    elif astro_sign == 'leo':
+    elif new_astro_sign == 'Leo':
         get_reading = leo.acell('B2').value
         print(get_reading)
-    elif astro_sign == 'virgo':
+    elif new_astro_sign == 'Virgo':
         get_reading = virgo.acell('B2').value
         print(get_reading)
-    elif astro_sign == 'libra':
+    elif new_astro_sign == 'Libra':
         get_reading = libra.acell('B2').value
         print(get_reading)
-    elif astro_sign == 'scorpious':
+    elif new_astro_sign == 'Scorpious':
         get_reading = scorpious.acell('B2').value
         print(get_reading)
-    elif astro_sign == 'sagittarius':
+    elif new_astro_sign == 'Sagittarius':
         get_reading = sagittarius.acell('B2').value
         print(get_reading)
-    elif astro_sign == 'capricorn':
+    elif new_astro_sign == 'Capricorn':
         get_reading = capricorn.acell('B2').value
         print(get_reading)
-    elif astro_sign == 'aquarius':
+    elif new_astro_sign == 'Aquarius':
         get_reading = aquarius.acell('B2').value
         print(get_reading)
-    elif astro_sign == 'pisces':
+    elif new_astro_sign == 'Pisces':
         get_reading = pisces.acell('B2').value
         print(get_reading)
 
