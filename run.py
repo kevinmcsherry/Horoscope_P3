@@ -324,15 +324,18 @@ def tomorrow_reading():
     if want_yesterday_reading[0] == 'y':
         yesterday_reading()
     else:
-        print("OK, GoodBye")
-        exit()
+        start_again()
 
 
 def start_again():
+    """
+    Function at the end of all horscope options
+    allow the user to start again with new details
+    """
     start_program_again = str(input("Would you like to start again? Y/N: ")).lower().strip()
     if start_program_again[0] == 'n':
-            print("OK, Goodbye")
-            exit()
+        print("OK, Goodbye")
+        exit()
     elif start_program_again[0] == 'y':
         os.execv(sys.executable, ['python3'] + sys.argv)
 
