@@ -1,4 +1,6 @@
 import datetime
+import sys
+import os
 import gspread
 from google.oauth2.service_account import Credentials
 from art import tprint
@@ -131,39 +133,203 @@ def retrieve_today_reading():
     if user_astro_sign == 'Aries':
         get_reading = aries.acell('B2').value
         print("Your Horoscope reading for Today is - " + get_reading)
+        print("")
     elif user_astro_sign == 'Taurus':
         get_reading = taurus.acell('B2').value
         print("Your Horoscope reading for Today is - " + get_reading)
+        print("")
     elif user_astro_sign == 'Gemini':
         get_reading = gemini.acell('B2').value
         print("Your Horoscope reading for Today is - " + get_reading)
+        print("")
     elif user_astro_sign == 'Cancer':
         get_reading = cancer.acell('B2').value
         print("Your Horoscope reading for Today is - " + get_reading)
+        print("")
     elif user_astro_sign == 'Leo':
         get_reading = leo.acell('B2').value
         print("Your Horoscope reading for Today is - " + get_reading)
+        print("")
     elif user_astro_sign == 'Virgo':
         get_reading = virgo.acell('B2').value
         print("Your Horoscope reading for Today is - " + get_reading)
+        print("")
     elif user_astro_sign == 'Libra':
         get_reading = libra.acell('B2').value
         print("Your Horoscope reading for Today is - " + get_reading)
+        print("")
     elif user_astro_sign == 'Scorpious':
         get_reading = scorpious.acell('B2').value
         print("Your Horoscope reading for Today is - " + get_reading)
+        print("")
     elif user_astro_sign == 'Sagittarius':
         get_reading = sagittarius.acell('B2').value
         print("Your Horoscope reading for Today is - " + get_reading)
+        print("")
     elif user_astro_sign == 'Capricorn':
         get_reading = capricorn.acell('B2').value
         print("Your Horoscope reading for Today is - " + get_reading)
+        print("")
     elif user_astro_sign == 'Aquarius':
         get_reading = aquarius.acell('B2').value
         print("Your Horoscope reading for Today is - " + get_reading)
+        print("")
     elif user_astro_sign == 'Pisces':
         get_reading = pisces.acell('B2').value
         print("Your Horoscope reading for Today is - " + get_reading)
+        print("")
+
+
+def get_another_reading():
+    """
+    Function to determine if the user would 
+    like to restart the program and enter new details
+    """
+    want_reading = str(input("Type M for more readings or S to start again M/S: ")).lower().strip()
+    try:
+        if want_reading[0] == 's':
+            os.execv(sys.executable, ['python3'] + sys.argv)
+        elif want_reading[0] == 'm':
+            want_tomorrow_reading = str(input("Would you like to know Tomorrows reading?  (Y/N:) ")).lower().strip()
+            if want_tomorrow_reading[0] == 'y':
+                tomorrow_reading()
+            elif want_tomorrow_reading[0] == 'n':
+                want_yesterday_reading = str(input("Would you like to know yesterdays reading?  (Y/N:) ")).lower().strip()
+                if want_yesterday_reading[0] == 'y':
+                    yesterday_reading()
+                elif want_yesterday_reading[0] == 'n':
+                    print("OK, Goodbye")
+                    exit()
+        else:
+            print('Invalid Input')
+            return get_another_reading()
+    except Exception as error:
+        print("Please enter valid inputs 'y' or 'n'")
+        print(error)
+        return get_another_reading()
+
+
+def yesterday_reading():
+    """
+    Function to determine star sign and 
+    correct reading from yesterday
+    """
+
+    user_astro_sign = calc_star_sign()
+
+    if user_astro_sign == 'Aries':
+        get_reading = aries.acell('D2').value
+        print("Your Horoscope reading for Yesterday is - " + get_reading)
+        print("")
+    elif user_astro_sign == 'Taurus':
+        get_reading = taurus.acell('D2').value
+        print("Your Horoscope reading for Yesterday is - " + get_reading)
+        print("")
+    elif user_astro_sign == 'Gemini':
+        get_reading = gemini.acell('D2').value
+        print("Your Horoscope reading for Yesterday is - " + get_reading)
+        print("")
+    elif user_astro_sign == 'Cancer':
+        get_reading = cancer.acell('D2').value
+        print("Your Horoscope reading for Yesterday is - " + get_reading)
+        print("")
+    elif user_astro_sign == 'Leo':
+        get_reading = leo.acell('D2').value
+        print("Your Horoscope reading for Yesterday is - " + get_reading)
+        print("")
+    elif user_astro_sign == 'Virgo':
+        get_reading = virgo.acell('D2').value
+        print("Your Horoscope reading for Yesterday is - " + get_reading)
+        print("")
+    elif user_astro_sign == 'Libra':
+        get_reading = libra.acell('D2').value
+        print("Your Horoscope reading for Yesterday is - " + get_reading)
+        print("")
+    elif user_astro_sign == 'Scorpious':
+        get_reading = scorpious.acell('D2').value
+        print("Your Horoscope reading for Yesterday is - " + get_reading)
+        print("")
+    elif user_astro_sign == 'Sagittarius':
+        get_reading = sagittarius.acell('D2').value
+        print("Your Horoscope reading for Yesterday is - " + get_reading)
+        print("")
+    elif user_astro_sign == 'Capricorn':
+        get_reading = capricorn.acell('D2').value
+        print("Your Horoscope reading for Yesterday is - " + get_reading)
+        print("")
+    elif user_astro_sign == 'Aquarius':
+        get_reading = aquarius.acell('D2').value
+        print("Your Horoscope reading for Yesterday is - " + get_reading)
+        print("")
+    elif user_astro_sign == 'Pisces':
+        get_reading = pisces.acell('D2').value
+        print("Your Horoscope reading for Yesterday is - " + get_reading)
+        print("")
+
+
+def tomorrow_reading():
+    """
+    Function to determine star sign and 
+    correct reading from yesterday
+    """
+    
+    user_astro_sign = calc_star_sign()
+
+    if user_astro_sign == 'Aries':
+        get_reading = aries.acell('C2').value
+        print("Your Horoscope reading for Tomorrow is - " + get_reading)
+        print("")
+    elif user_astro_sign == 'Taurus':
+        get_reading = taurus.acell('C2').value
+        print("Your Horoscope reading for Tomorrow is - " + get_reading)
+        print("")
+    elif user_astro_sign == 'Gemini':
+        get_reading = gemini.acell('C2').value
+        print("Your Horoscope reading for Tomorrow is - " + get_reading)
+        print("")
+    elif user_astro_sign == 'Cancer':
+        get_reading = cancer.acell('C2').value
+        print("Your Horoscope reading for Tomorrow is - " + get_reading)
+        print("")
+    elif user_astro_sign == 'Leo':
+        get_reading = leo.acell('C2').value
+        print("Your Horoscope reading for Tomorrow is - " + get_reading)
+        print("")
+    elif user_astro_sign == 'Virgo':
+        get_reading = virgo.acell('C2').value
+        print("Your Horoscope reading for Tomorrow is - " + get_reading)
+        print("")
+    elif user_astro_sign == 'Libra':
+        get_reading = libra.acell('C2').value
+        print("Your Horoscope reading for Tomorrow is - " + get_reading)
+        print("")
+    elif user_astro_sign == 'Scorpious':
+        get_reading = scorpious.acell('C2').value
+        print("Your Horoscope reading for Tomorrow is - " + get_reading)
+        print("")
+    elif user_astro_sign == 'Sagittarius':
+        get_reading = sagittarius.acell('C2').value
+        print("Your Horoscope reading for Tomorrow is - " + get_reading)
+        print("")
+    elif user_astro_sign == 'Capricorn':
+        get_reading = capricorn.acell('C2').value
+        print("Your Horoscope reading for Tomorrow is - " + get_reading)
+        print("")
+    elif user_astro_sign == 'Aquarius':
+        get_reading = aquarius.acell('C2').value
+        print("Your Horoscope reading for Tomorrow is - " + get_reading)
+        print("")
+    elif user_astro_sign == 'Pisces':
+        get_reading = pisces.acell('C2').value
+        print("Your Horoscope reading for Tomorrow is - " + get_reading)
+        print("")
+
+    want_yesterday_reading = str(input("Would you like to know yesterdays reading?  (Y/N:) ")).lower().strip()
+    if want_yesterday_reading[0] == 'y':
+        yesterday_reading()
+    else:
+        print("OK, GoodBye")
+        exit()
 
 
 def main():
@@ -173,7 +339,7 @@ def main():
     calc_age()
     calc_star_sign()
     get_reading()
-
-
+    get_another_reading()
+   
+  
 main()
-
