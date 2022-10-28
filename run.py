@@ -33,11 +33,6 @@ tprint("Welcome  to", font="small")
 tprint("your  Daily", font="small")
 tprint("Horoscope  page!", font="small")
 
-name = ""
-year = ""
-month = ""
-day = ""
-
 
 name = input("Please Enter your Name:")
 print("")
@@ -46,7 +41,7 @@ print("")
 month = int(input("Please enter the number of the month\n"
             + "you were born. For example 3 = March: "))
 print("")
-day = int(input("Please enter the day you were born "))
+day = int(input("Please enter the day you were born: "))
 dob = datetime.datetime(year, month, day)
 
 
@@ -334,7 +329,7 @@ def tomorrow_reading():
 
 
 def start_again():
-    start_program_again = str(input("Would you like to start again? Y/N ")).lower().strip()
+    start_program_again = str(input("Would you like to start again? Y/N: ")).lower().strip()
     if start_program_again[0] == 'n':
             print("OK, Goodbye")
             exit()
@@ -352,5 +347,5 @@ def main():
     get_another_reading()
     start_again()
    
-   
+
 main()
