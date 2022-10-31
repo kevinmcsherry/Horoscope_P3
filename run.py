@@ -36,12 +36,30 @@ tprint("Horoscope  page!", font="small")
 
 name = input("Please Enter your Name:")
 print("")
-year = int(input("Please enter the year you were born: "))
-print("")
-month = int(input("Please enter the number of the month\n"
+
+while True:
+    try:    
+        year = int(input("Please enter the year you were born: "))
+        break
+        print("")
+    except ValueError:
+        print('This is not a number.')
+while True:
+    try:
+        month = int(input("Please enter the number of the month\n"
             + "you were born. For example 3 = March: "))
-print("")
-day = int(input("Please enter the day you were born: "))
+        break
+    except ValueError:
+        print('This is not a number.')
+    print("")
+while True:
+    try:
+        day = int(input("Please enter the day you were born: "))
+        break
+    except ValueError:
+        print('This is not a number.')
+        print("")
+
 dob = datetime.datetime(year, month, day)
 
 
@@ -111,7 +129,7 @@ def calc_star_sign():
     elif month == 11:
         astro_sign = 'Scorpio' if (day < 22) else 'Sagittarius'
     print("")
-    return astro_sign        
+    return astro_sign       
 
 
 def retrieve_today_reading():
@@ -265,10 +283,9 @@ def yesterday_reading():
 
 def tomorrow_reading():
     """
-    Function to determine star sign and 
+    Function to determine star sign and
     correct reading from yesterday
-    """
-    
+    """  
     user_astro_sign = calc_star_sign()
 
     if user_astro_sign == 'Aries':
