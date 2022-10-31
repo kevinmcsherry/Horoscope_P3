@@ -40,25 +40,26 @@ print("")
 while True:
     try:    
         year = int(input("Please enter the year you were born: "))
-        break
         print("")
+        break
     except ValueError:
-        print('This is not a number.')
+        print('This is not a number, please re-enter')
 while True:
     try:
         month = int(input("Please enter the number of the month\n"
-            + "you were born. For example 3 = March: "))
+                + "you were born. For example 3 = March: "))     
+        print("")
         break
     except ValueError:
-        print('This is not a number.')
+        print('This is not a number, please re-enter')
     print("")
 while True:
     try:
         day = int(input("Please enter the day you were born: "))
+        print("")
         break
     except ValueError:
-        print('This is not a number.')
-        print("")
+        print('This is not a number, please re-enter')
 
 dob = datetime.datetime(year, month, day)
 
