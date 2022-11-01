@@ -49,9 +49,11 @@ while True:
         month = int(input("Please enter the number of the month\n"
                 + "you were born. For example 3 = March: "))     
         print("")
+        if month > 12:
+            raise ValueError
         break
     except ValueError:
-        print('This is not a number, please re-enter')
+        print('Value must be a number between 1-12')
     print("")
 while True:
     try:
