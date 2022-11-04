@@ -50,7 +50,9 @@ There is a Worksheet for each star sign, and different readings for each sign an
 
 # Unfixed Bugs
 
-- I'm pretty happy with how the code is working, I wouldn't say there are remaining bugs.  What I already referenced perhaps is the fact that I rely on the datetime method to handle the day entry errors..which actually ends the program - ideally this would be handled and remain in program.  This only happens if a day is entered that does not satisfy the day.
+- I missed the fact that a user can add a year greater than today or over all date greater than today, so there age is actually a minus number... This is not great.  If time permitted, I would retreive todays date, extract the year, and make sure the input is not greater than this year.  As a quick fix, I've hardcoded 2022. 
+- I'm pretty happy with how the code is working, I wouldn't say there many other remaining bugs.  What I already referenced perhaps is the fact that I rely on the datetime method to handle the day entry errors..which actually ends the program - ideally this would be handled and remain in program.  This only happens if a day is entered that does not satisfy the day.
+
 
 
 

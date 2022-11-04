@@ -41,9 +41,11 @@ while True:
     try:    
         year = int(input("Please enter the year you were born: "))
         print("")
+        if year > 2022:
+            raise ValueError
         break
     except ValueError:
-        print('This is not a number, please re-enter')
+        print('Value must be numeric and cannot be greater than 2022')
 while True:
     try:
         month = int(input("Please enter the number of the month\n"
