@@ -11,14 +11,17 @@ There is a Worksheet for each star sign, and different readings for each sign an
     
     - Year of birth
     When a user enters a year of birth, the program code checks if the data entered is numeric.  If not numeric, the program will post an error (This is not a number, please re-enter), and will re-prompt until a valid number is entered. 
+    I also added error-handling to not allow negative values added.
 
     - Month of birth
     When a user enters a month of birth, again the program will check if the data entered is a numeric value, and if not will provide an error (Value must be a number between 1-12), and will continue to re-prompt until numeric value is added.  The program will also check if the value entered is >12, and if so will display an error (Value must be a number between 1-12) and will re-prompt until a numeric value between 1-12 is entered.
+    I also added error-handling to not allow negative values added.
 
     ![Month Error Handling](images/Error_handling_for_months.png)
 
     - Day of birth
     When a user enters a value the program will once again check if numeric and will display an error if not.  There will also be an error displayed if the day does not match the month added…. this is controlled by the imported datetime method.  
+    I also added error-handling to not allow negative values added.
 
 
 - __Star Sign calculation__
@@ -53,11 +56,13 @@ There is a Worksheet for each star sign, and different readings for each sign an
 # Unfixed Bugs
 
 - I missed the fact that a user can add a year greater than today or over all date greater than today, so there age is actually a minus number... This is not great.  If time permitted, I would retreive todays date, extract the year, and make sure the input is not greater than this year.  As a quick fix, I've hardcoded 2022 in an error handler and raise an error if greater than.
-- I'm pretty happy with how the code is working, I wouldn't say there many other remaining bugs.  What I already referenced perhaps is the fact that I rely on the datetime method to handle the day entry errors..which actually ends the program - ideally this would be handled and remain in program.  This only happens if a day is entered that does not satisfy the day.
+- I'm pretty happy with how the code is working, I wouldn't say there many other remaining bugs.  What I already referenced perhaps is the fact that I rely on the datetime method to handle the day entry errors..which actually ends the program - ideally this would be handled and remain in program.  This only happens if a day is entered that does not satisfy the day.  Again, as a quick fix, I hardcoded if the inout is >31 to throw and error, but this is not ideal.
 
 # Deployment
 
+- In order to deploy my project and make it available to run via a visual program, I needed to synch my GitHub project through Heroku.  I had to sign up for a new account, add credentials, link to the correct repository and add some settings to allow for seemless deployment.  One thing I made sure to do was set to automatic deploys, which meant each time I pushed through gitpod, these changes would then render to the new GUI. My Heroku dashboard - https://dashboard.heroku.com/apps/horoscope-p3/deploy/github 
 - My project is deployed via Heroku.  My live published site - https://horoscope-p3.herokuapp.com/
+- My GitHub repository is housed here - https://github.com/kevinmcsherry/Horoscope_P3 
 
 ## Credits 
 
