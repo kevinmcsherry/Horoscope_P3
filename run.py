@@ -33,9 +33,16 @@ tprint("Welcome  to", font="small")
 tprint("your  Daily", font="small")
 tprint("Horoscope  page!", font="small")
 
-
-name = input("Please Enter your Name:")
-print("")
+while True:
+    try:
+        name = input("Please Enter your Name:")
+        print()
+        if len(name) < 1:
+            raise ValueError
+        break
+    except ValueError:
+        print("Must enter an alpha value")
+        print()
 
 while True:
     try:    
@@ -46,6 +53,7 @@ while True:
         break
     except ValueError:
         print('Value must be positive numeric and cannot be greater than 2022')
+        print()
 while True:
     try:
         month = int(input("Please enter the number of the month\n"
@@ -66,6 +74,7 @@ while True:
         break
     except ValueError:
         print('Please enter a positive number between 1-31')
+        print()
 
 dob = datetime.datetime(year, month, day)
 
@@ -206,16 +215,19 @@ def get_another_reading():
     like to restart the program and enter new details
     """
     want_reading = str(input("Type M for more readings or E to Exit M/E: ")).lower().strip()
+    print()
     try:
         if want_reading[0] == 'e':
             print("OK, Goodbye")
             exit()
         elif want_reading[0] == 'm':
             want_tomorrow_reading = str(input("Would you like to know Tomorrows reading?  (Y/N:) ")).lower().strip()
+            print()
             if want_tomorrow_reading[0] == 'y':
                 tomorrow_reading()
             elif want_tomorrow_reading[0] == 'n':
                 want_yesterday_reading = str(input("Would you like to know yesterdays reading?  (Y/N:) ")).lower().strip()
+                print()
                 if want_yesterday_reading[0] == 'y':
                     yesterday_reading()
                 elif want_yesterday_reading[0] == 'n':
