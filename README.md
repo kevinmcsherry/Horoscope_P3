@@ -15,6 +15,8 @@ There is a Worksheet for each star sign, and different readings for each sign an
     - Month of birth
     When a user enters a month of birth, again the program will check if the data entered is a numeric value, and if not will provide an error (Value must be a number between 1-12), and will continue to re-prompt until numeric value is added.  The program will also check if the value entered is >12, and if so will display an error (Value must be a number between 1-12) and will re-prompt until a numeric value between 1-12 is entered.
 
+    ![Month Error Handling](images/Error_handling_for_months.png)
+
     - Day of birth
     When a user enters a value the program will once again check if numeric and will display an error if not.  There will also be an error displayed if the day does not match the month added…. this is controlled by the imported datetime method.  
 
@@ -50,8 +52,28 @@ There is a Worksheet for each star sign, and different readings for each sign an
 
 # Unfixed Bugs
 
-- I missed the fact that a user can add a year greater than today or over all date greater than today, so there age is actually a minus number... This is not great.  If time permitted, I would retreive todays date, extract the year, and make sure the input is not greater than this year.  As a quick fix, I've hardcoded 2022. 
+- I missed the fact that a user can add a year greater than today or over all date greater than today, so there age is actually a minus number... This is not great.  If time permitted, I would retreive todays date, extract the year, and make sure the input is not greater than this year.  As a quick fix, I've hardcoded 2022 in an error handler and raise an error if greater than.
 - I'm pretty happy with how the code is working, I wouldn't say there many other remaining bugs.  What I already referenced perhaps is the fact that I rely on the datetime method to handle the day entry errors..which actually ends the program - ideally this would be handled and remain in program.  This only happens if a day is entered that does not satisfy the day.
+
+# Deployment
+
+- My project is deployed via Heroku.  My live published site - https://horoscope-p3.herokuapp.com/
+
+## Credits 
+
+I used a number of different websites and did a lot of searching throughout the project.  I really tried to understand the logic that I was finding and implement in my own code, and not just copy and paste in.  I may have lost a lot of time here, but I wanted to understand and learn.
+I followed the love sandwiches project closely, and used as much of the thought and layout of this.
+I used well known coding sites like Stackoverflow and W3Schools.  I would have really struggled without these reference points.
+I required a bit of help with the logic for the horoscope sign calculation, and I leaned on a resource https://www.w3resource.com/.  
+Part of the coding piece I struggled with was to share variables across functions, I did quite a bit of searching for what I could find around this, I found a helpful video on youtube that helped me - https://www.youtube.com/channel/UCSSNp6PBXNvlt0VQQPAmD0Q
+Of course, I needed help with genuine horoscope content and I got this from http://Horoscope.com 
+
+
+# Project summary 
+
+- I was really looking forward to this section of the course and the project.  I enjoyed Javascript and therefore I believed that python would be similar.  It was not!  I found it more challenging.  The coding structure is very different and I found it a quite a bit more difficult to follow.
+- As for the project, I wanted to remain orignal and come up with an idea of my own and not rely on suggested projects where there was a lot of code and help provided.  I hope this come across in my work and that I am recognised for that.  My code is not perfect, but I much prefer working through this with as little help as possible - not becuase I think that seeking help is wrong and can be quicker...but I really want to learn and understand, which definitely is the case with this project.
+- I think the horoscope is a good idea, and is quite useful too, as this is something that people are interested in and something that has real life uses. 
 
 
 
