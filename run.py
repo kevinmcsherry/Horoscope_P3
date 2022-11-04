@@ -41,17 +41,17 @@ while True:
     try:    
         year = int(input("Please enter the year you were born: "))
         print("")
-        if year > 2022:
+        if year > 2022 or year <= 0:
             raise ValueError
         break
     except ValueError:
-        print('Value must be numeric and cannot be greater than 2022')
+        print('Value must be positive numeric and cannot be greater than 2022')
 while True:
     try:
         month = int(input("Please enter the number of the month\n"
-                + "you were born. For example 3 = March: "))     
+                          + "you were born. For example 3 = March: "))     
         print("")
-        if month > 12:
+        if month > 12 or month <= 0:
             raise ValueError
         break
     except ValueError:
@@ -61,9 +61,11 @@ while True:
     try:
         day = int(input("Please enter the day you were born: "))
         print("")
+        if day > 31 or day <= 0:
+            raise ValueError
         break
     except ValueError:
-        print('This is not a number, please re-enter')
+        print('Please enter a positive number between 1-31')
 
 dob = datetime.datetime(year, month, day)
 
