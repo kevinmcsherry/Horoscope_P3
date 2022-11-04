@@ -108,9 +108,9 @@ def get_reading():
         else:
             print('Invalid Input')
             return get_reading()
-    except Exception as error:
+    except Exception:
         print("Please enter valid inputs 'y' or 'n'")
-        print(error)
+        print()
         return get_reading()
 
 
@@ -236,9 +236,9 @@ def get_another_reading():
         else:
             print('Invalid Input')
             return get_another_reading()
-    except Exception as error:
-        print("Please enter valid inputs 'y' or 'n'")
-        print(error)
+    except Exception:
+        print("Please enter valid inputs 'M' or 'E'")
+        print()
         return get_another_reading()
 
 
@@ -369,11 +369,16 @@ def start_again():
     allow the user to start again with new details
     """
     start_program_again = str(input("Would you like to start again? Y/N: ")).lower().strip()
-    if start_program_again[0] == 'n':
-        print("OK, Goodbye")
-        exit()
-    elif start_program_again[0] == 'y':
-        os.execv(sys.executable, ['python3'] + sys.argv)
+    try:
+        if start_program_again[0] == 'n':
+            print("OK, Goodbye")
+            exit()
+        elif start_program_again[0] == 'y':
+            os.execv(sys.executable, ['python3'] + sys.argv)
+    except Exception:
+        print("Please enter valid inputs 'y' or 'n'")
+        print()
+        return start_again()
 
 
 def main():
