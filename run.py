@@ -41,11 +41,11 @@ while True:
             raise ValueError
         break
     except ValueError:
-        print("Must enter an alpha value")
+        print("Must enter an alphanumeric value")
         print()
 
 while True:
-    try:    
+    try: 
         year = int(input("Please enter the year you were born: "))
         print("")
         if year > 2022 or year <= 0:
@@ -57,7 +57,7 @@ while True:
 while True:
     try:
         month = int(input("Please enter the number of the month\n"
-                          + "you were born. For example 3 = March: "))     
+                          + "you were born. For example 3 = March: "))    
         print("")
         if month > 12 or month <= 0:
             raise ValueError
@@ -244,7 +244,7 @@ def get_another_reading():
 
 def yesterday_reading():
     """
-    Function to determine star sign and 
+    Function to determine star sign and
     correct reading from yesterday
     """
 
@@ -385,6 +385,6 @@ def main():
     get_reading()
     get_another_reading()
     start_again()
-   
+ 
 
 main()
